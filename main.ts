@@ -74,9 +74,141 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     false
     )
 })
+function SpawnEnemy () {
+    for (let value of tiles.getTilesByType(assets.tile`myTile`)) {
+        Enemy1 = sprites.create(img`
+            . . f f f . . . . . . . . f f f 
+            . f f c c . . . . . . f c b b c 
+            f f c c . . . . . . f c b b c . 
+            f c f c . . . . . . f b c c c . 
+            f f f c c . c c . f c b b c c . 
+            f f c 3 c c 3 c c f b c b b c . 
+            f f b 3 b c 3 b c f b c c b c . 
+            . c b b b b b b c b b c c c . . 
+            . c 1 b b b 1 b b c c c c . . . 
+            c b b b b b b b b b c c . . . . 
+            c b c b b b c b b b b f . . . . 
+            f b 1 f f f 1 b b b b f c . . . 
+            f b b b b b b b b b b f c c . . 
+            . f b b b b b b b b c f . . . . 
+            . . f b b b b b b c f . . . . . 
+            . . . f f f f f f f . . . . . . 
+            `, SpriteKind.Enemy)
+        Enemy1.scale = 0.85
+        animation.runImageAnimation(
+        Enemy1,
+        [img`
+            f f f . . . . . . . . f f f . . 
+            c b b c f . . . . . . c c f f . 
+            . c b b c f . . . . . . c c f f 
+            . c c c b f . . . . . . c f c f 
+            . c c b b c f . c c . c c f f f 
+            . c b b c b f c c 3 c c 3 c f f 
+            . c b c c b f c b 3 c b 3 b f f 
+            . . c c c b b c b 1 b b b 1 c . 
+            . . . c c c c b b 1 b b b 1 c . 
+            . . . . c c b b b b b b b b b c 
+            . . . . f b b b b c 1 f f 1 b c 
+            . . . c f b b b b f 1 f f 1 f f 
+            . . c c f b b b b f 2 2 2 2 f f 
+            . . . . f c b b b b 2 2 2 2 f . 
+            . . . . . f c b b b b b b f . . 
+            . . . . . . f f f f f f f . . . 
+            `,img`
+            . . . . . . . . . . . f f f . . 
+            f f f . . . . . . . . c c f f f 
+            c b b c f . . . c c . c c c f f 
+            . c b b b f f c c 3 c c 3 c f f 
+            . c c c b b f c b 3 c b 3 c f f 
+            . c c b c b f c b b b b b b c f 
+            . c b b c b b c b 1 b b b 1 c c 
+            . c b c c c b b b b b b b b b c 
+            . . c c c c c b b c 1 f f 1 b c 
+            . . . c f b b b b f 1 f f 1 f c 
+            . . . c f b b b b f f f f f f f 
+            . . c c f b b b b f 2 2 2 2 f f 
+            . . . . f c b b b 2 2 2 2 2 f . 
+            . . . . . f c b b b 2 2 2 f . . 
+            . . . . . . f f f f f f f . . . 
+            . . . . . . . . . . . . . . . . 
+            `,img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . c c . c c . . . 
+            . . . . . . c c c 3 c c 3 f . . 
+            . . . . . c c c b 3 c b 3 c f . 
+            . . . . f f b b b b b b b b c f 
+            . . . . f f b b b 1 b b b 1 c c 
+            . . . f f f c b b b b b b b b c 
+            . . . f f f f b b c 1 f f 1 b c 
+            . . . b b b c c b f 1 f f 1 f f 
+            . . . c c c c f b f f f f f f f 
+            . . c c c b b f b f 2 2 2 2 f f 
+            . . . c b b c c b 2 2 2 2 2 f . 
+            . . c b b c c f f b 2 2 2 f . . 
+            . c c c c c f f f f f f f . . . 
+            c c c c . . . . . . . . . . . . 
+            `,img`
+            . f f f . . . . . . . . f f f . 
+            . c b b c f . . . . . . . c f f 
+            . . c b b c f . . . . . . c c f 
+            . . c c c b f . . . . . . . f c 
+            . . c c b b f f . . . . . f f c 
+            . . c b b c b f c c . c c f f f 
+            . . c b c c b f c c c c c f f f 
+            . . . c c c b c b 3 c c 3 c f . 
+            . . . c c c c b b 3 c b 3 b c . 
+            . . . . c c b b b b b b b b c c 
+            . . . c f b b b 1 1 b b b 1 1 c 
+            . . c c f b b b b b b b b b b f 
+            . . . . f b b b b c b b b c b f 
+            . . . . f c b b b 1 f f f 1 f . 
+            . . . . . f c b b b b b b f . . 
+            . . . . . . f f f f f f f . . . 
+            `],
+        300,
+        true
+        )
+        Enemy1.follow(Player1, 25)
+        tiles.placeOnTile(Enemy1, value)
+        tiles.setTileAt(value, sprites.castle.tilePath5)
+    }
+}
+function Loadlevel () {
+    if (currentlevel == 0) {
+        tiles.setCurrentTilemap(tilemap`level2`)
+    } else if (currentlevel == 1) {
+        tiles.setCurrentTilemap(tilemap`level7`)
+    }
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
+function SpawnFood () {
+    for (let value of tiles.getTilesByType(assets.tile`myTile0`)) {
+        Food1 = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . 6 6 6 6 . . . . . . 
+            . . . . 6 6 6 5 5 6 6 6 . . . . 
+            . . . 7 7 7 7 6 6 6 6 6 6 . . . 
+            . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
+            . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
+            . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
+            . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
+            . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
+            . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
+            . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
+            . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
+            . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+            . . . . 6 6 8 8 8 8 6 6 . . . . 
+            . . . . . . 6 6 6 6 . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Food)
+        Food1.scale = 0.85
+        tiles.placeOnTile(Food1, value)
+        tiles.setTileAt(value, sprites.castle.tilePath5)
+    }
+}
 controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Player1,
@@ -422,25 +554,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     pause(1000)
     info.changeScoreBy(1)
 })
+let Food1: Sprite = null
+let Enemy1: Sprite = null
 let Player1: Sprite = null
-let Enemy1 = sprites.create(img`
-    . . f f f . . . . . . . . f f f 
-    . f f c c . . . . . . f c b b c 
-    f f c c . . . . . . f c b b c . 
-    f c f c . . . . . . f b c c c . 
-    f f f c c . c c . f c b b c c . 
-    f f c 3 c c 3 c c f b c b b c . 
-    f f b 3 b c 3 b c f b c c b c . 
-    . c b b b b b b c b b c c c . . 
-    . c 1 b b b 1 b b c c c c . . . 
-    c b b b b b b b b b c c . . . . 
-    c b c b b b c b b b b f . . . . 
-    f b 1 f f f 1 b b b b f c . . . 
-    f b b b b b b b b b b f c c . . 
-    . f b b b b b b b b c f . . . . 
-    . . f b b b b b b c f . . . . . 
-    . . . f f f f f f f . . . . . . 
-    `, SpriteKind.Enemy)
+let currentlevel = 0
+currentlevel = 0
+Loadlevel()
 Player1 = sprites.create(img`
     ......ffff..............
     ....fff22fff............
@@ -467,149 +586,11 @@ Player1 = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Player)
-Enemy1.setPosition(64, 87)
-Player1.setPosition(randint(10, 220), randint(150, 220))
+Player1.setPosition(randint(10, 120), randint(10, 100))
 Player1.setStayInScreen(true)
 controller.moveSprite(Player1)
-let Food1 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . 6 6 6 5 5 6 6 6 . . . . 
-    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
-    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
-    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
-    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
-    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
-    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
-    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
-    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
-    . . . . 6 6 8 8 8 8 6 6 . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Food)
-let Food2 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . 6 6 6 5 5 6 6 6 . . . . 
-    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
-    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
-    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
-    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
-    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
-    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
-    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
-    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
-    . . . . 6 6 8 8 8 8 6 6 . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Food)
-let Food3 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . 6 6 6 5 5 6 6 6 . . . . 
-    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
-    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
-    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
-    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
-    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
-    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
-    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
-    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
-    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
-    . . . . 6 6 8 8 8 8 6 6 . . . . 
-    . . . . . . 6 6 6 6 . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Food)
-Food1.scale = 0.85
-Food2.scale = 0.85
-Food3.scale = 0.85
-Enemy1.scale = 0.85
-tiles.setCurrentTilemap(tilemap`level2`)
 scene.cameraFollowSprite(Player1)
 scene.setBackgroundColor(15)
-Food1.setPosition(207, 40)
-Food2.setPosition(64, 136)
-Food2.setPosition(136, 113)
-Enemy1.follow(Player1)
 info.setScore(0)
-animation.runImageAnimation(
-Enemy1,
-[img`
-    f f f . . . . . . . . f f f . . 
-    c b b c f . . . . . . c c f f . 
-    . c b b c f . . . . . . c c f f 
-    . c c c b f . . . . . . c f c f 
-    . c c b b c f . c c . c c f f f 
-    . c b b c b f c c 3 c c 3 c f f 
-    . c b c c b f c b 3 c b 3 b f f 
-    . . c c c b b c b 1 b b b 1 c . 
-    . . . c c c c b b 1 b b b 1 c . 
-    . . . . c c b b b b b b b b b c 
-    . . . . f b b b b c 1 f f 1 b c 
-    . . . c f b b b b f 1 f f 1 f f 
-    . . c c f b b b b f 2 2 2 2 f f 
-    . . . . f c b b b b 2 2 2 2 f . 
-    . . . . . f c b b b b b b f . . 
-    . . . . . . f f f f f f f . . . 
-    `,img`
-    . . . . . . . . . . . f f f . . 
-    f f f . . . . . . . . c c f f f 
-    c b b c f . . . c c . c c c f f 
-    . c b b b f f c c 3 c c 3 c f f 
-    . c c c b b f c b 3 c b 3 c f f 
-    . c c b c b f c b b b b b b c f 
-    . c b b c b b c b 1 b b b 1 c c 
-    . c b c c c b b b b b b b b b c 
-    . . c c c c c b b c 1 f f 1 b c 
-    . . . c f b b b b f 1 f f 1 f c 
-    . . . c f b b b b f f f f f f f 
-    . . c c f b b b b f 2 2 2 2 f f 
-    . . . . f c b b b 2 2 2 2 2 f . 
-    . . . . . f c b b b 2 2 2 f . . 
-    . . . . . . f f f f f f f . . . 
-    . . . . . . . . . . . . . . . . 
-    `,img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . c c . c c . . . 
-    . . . . . . c c c 3 c c 3 f . . 
-    . . . . . c c c b 3 c b 3 c f . 
-    . . . . f f b b b b b b b b c f 
-    . . . . f f b b b 1 b b b 1 c c 
-    . . . f f f c b b b b b b b b c 
-    . . . f f f f b b c 1 f f 1 b c 
-    . . . b b b c c b f 1 f f 1 f f 
-    . . . c c c c f b f f f f f f f 
-    . . c c c b b f b f 2 2 2 2 f f 
-    . . . c b b c c b 2 2 2 2 2 f . 
-    . . c b b c c f f b 2 2 2 f . . 
-    . c c c c c f f f f f f f . . . 
-    c c c c . . . . . . . . . . . . 
-    `,img`
-    . f f f . . . . . . . . f f f . 
-    . c b b c f . . . . . . . c f f 
-    . . c b b c f . . . . . . c c f 
-    . . c c c b f . . . . . . . f c 
-    . . c c b b f f . . . . . f f c 
-    . . c b b c b f c c . c c f f f 
-    . . c b c c b f c c c c c f f f 
-    . . . c c c b c b 3 c c 3 c f . 
-    . . . c c c c b b 3 c b 3 b c . 
-    . . . . c c b b b b b b b b c c 
-    . . . c f b b b 1 1 b b b 1 1 c 
-    . . c c f b b b b b b b b b b f 
-    . . . . f b b b b c b b b c b f 
-    . . . . f c b b b 1 f f f 1 f . 
-    . . . . . f c b b b b b b f . . 
-    . . . . . . f f f f f f f . . . 
-    `],
-300,
-true
-)
-Enemy1.vx = 7
-Enemy1.vy = 7
+SpawnFood()
+SpawnEnemy()

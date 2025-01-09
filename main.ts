@@ -1,9 +1,320 @@
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-	
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Player1,
+    [img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f e e e e f f . . . . 
+        . . . f e e e f f e e e f . . . 
+        . . f f f f f 2 2 f f f f f . . 
+        . . f f e 2 e 2 2 e 2 e f f . . 
+        . . f e 2 f 2 f f 2 f 2 e f . . 
+        . . f f f 2 2 e e 2 2 f f f . . 
+        . f f e f 2 f e e f 2 f e f f . 
+        . f e e f f e e e e f e e e f . 
+        . . f e e e e e e e e e e f . . 
+        . . . f e e e e e e e e f . . . 
+        . . e 4 f f f f f f f f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f e e e e f f . . . . 
+        . . . f e e e f f e e e f . . . 
+        . . . f f f f 2 2 f f f f . . . 
+        . . f f e 2 e 2 2 e 2 e f f . . 
+        . . f e 2 f 2 f f f 2 f e f . . 
+        . . f f f 2 f e e 2 2 f f f . . 
+        . . f e 2 f f e e 2 f e e f . . 
+        . f f e f f e e e f e e e f f . 
+        . f f e e e e e e e e e e f f . 
+        . . . f e e e e e e e e f . . . 
+        . . . e f f f f f f f f 4 e . . 
+        . . . 4 f 2 2 2 2 2 e d d 4 . . 
+        . . . e f f f f f f e e 4 . . . 
+        . . . . f f f . . . . . . . . . 
+        `,img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f e e e e f f . . . . 
+        . . . f e e e f f e e e f . . . 
+        . . f f f f f 2 2 f f f f f . . 
+        . . f f e 2 e 2 2 e 2 e f f . . 
+        . . f e 2 f 2 f f 2 f 2 e f . . 
+        . . f f f 2 2 e e 2 2 f f f . . 
+        . f f e f 2 f e e f 2 f e f f . 
+        . f e e f f e e e e f e e e f . 
+        . . f e e e e e e e e e e f . . 
+        . . . f e e e e e e e e f . . . 
+        . . e 4 f f f f f f f f 4 e . . 
+        . . 4 d f 2 2 2 2 2 2 f d 4 . . 
+        . . 4 4 f 4 4 4 4 4 4 f 4 4 . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f e e e e f f . . . . 
+        . . . f e e e f f e e e f . . . 
+        . . . f f f f 2 2 f f f f . . . 
+        . . f f e 2 e 2 2 e 2 e f f . . 
+        . . f e f 2 f f f 2 f 2 e f . . 
+        . . f f f 2 2 e e f 2 f f f . . 
+        . . f e e f 2 e e f f 2 e f . . 
+        . f f e e e f e e e f f e f f . 
+        . f f e e e e e e e e e e f f . 
+        . . . f e e e e e e e e f . . . 
+        . . e 4 f f f f f f f f e . . . 
+        . . 4 d d e 2 2 2 2 2 f 4 . . . 
+        . . . 4 e e f f f f f f e . . . 
+        . . . . . . . . . f f f . . . . 
+        `],
+    500,
+    false
+    )
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+	
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    Player1,
+    [img`
+        . . . . f f f f f f . . . . . . 
+        . . . f 2 f e e e e f f . . . . 
+        . . f 2 2 2 f e e e e f f . . . 
+        . . f e e e e f f e e e f . . . 
+        . f e 2 2 2 2 e e f f f f . . . 
+        . f 2 e f f f f 2 2 2 e f . . . 
+        . f f f e e e f f f f f f f . . 
+        . f e e 4 4 f b e 4 4 e f f . . 
+        . . f e d d f 1 4 d 4 e e f . . 
+        . . . f d d d d 4 e e e f . . . 
+        . . . f e 4 4 4 e e f f . . . . 
+        . . . f 2 2 2 e d d 4 . . . . . 
+        . . . f 2 2 2 e d d e . . . . . 
+        . . . f 5 5 4 f e e f . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . f 2 f e e e e f f . . . . 
+        . . f 2 2 2 f e e e e f f . . . 
+        . . f e e e e f f e e e f . . . 
+        . f e 2 2 2 2 e e f f f f . . . 
+        . f 2 e f f f f 2 2 2 e f . . . 
+        . f f f e e e f f f f f f f . . 
+        . f e e 4 4 f b e 4 4 e f f . . 
+        . . f e d d f 1 4 d 4 e e f . . 
+        . . . f d d d e e e e e f . . . 
+        . . . f e 4 e d d 4 f . . . . . 
+        . . . f 2 2 e d d e f . . . . . 
+        . . f f 5 5 f e e f f f . . . . 
+        . . f f f f f f f f f f . . . . 
+        . . . f f f . . . f f . . . . . 
+        `,img`
+        . . . . f f f f f f . . . . . . 
+        . . . f 2 f e e e e f f . . . . 
+        . . f 2 2 2 f e e e e f f . . . 
+        . . f e e e e f f e e e f . . . 
+        . f e 2 2 2 2 e e f f f f . . . 
+        . f 2 e f f f f 2 2 2 e f . . . 
+        . f f f e e e f f f f f f f . . 
+        . f e e 4 4 f b e 4 4 e f f . . 
+        . . f e d d f 1 4 d 4 e e f . . 
+        . . . f d d d d 4 e e e f . . . 
+        . . . f e 4 4 4 e e f f . . . . 
+        . . . f 2 2 2 e d d 4 . . . . . 
+        . . . f 2 2 2 e d d e . . . . . 
+        . . . f 5 5 4 f e e f . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . f f f f f f . . . . . . 
+        . . . f 2 f e e e e f f . . . . 
+        . . f 2 2 2 f e e e e f f . . . 
+        . . f e e e e f f e e e f . . . 
+        . f e 2 2 2 2 e e f f f f . . . 
+        . f 2 e f f f f 2 2 2 e f . . . 
+        . f f f e e e f f f f f f f . . 
+        . f e e 4 4 f b e 4 4 e f f . . 
+        . . f e d d f 1 4 d 4 e e f . . 
+        . . . f d d d d 4 e e e f . . . 
+        . . . f e 4 4 4 e d d 4 . . . . 
+        . . . f 2 2 2 2 e d d e . . . . 
+        . . f f 5 5 4 4 f e e f . . . . 
+        . . f f f f f f f f f f . . . . 
+        . . . f f f . . . f f . . . . . 
+        `],
+    500,
+    false
+    )
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    Player1,
+    [img`
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e 4 d d d d f . . . 
+        . . . . f f e e 4 4 4 e f . . . 
+        . . . . . 4 d d e 2 2 2 f . . . 
+        . . . . . e d d e 2 2 2 f . . . 
+        . . . . . f e e f 4 5 5 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e e e d d d f . . . 
+        . . . . . f 4 d d e 4 e f . . . 
+        . . . . . f e d d e 2 2 f . . . 
+        . . . . f f f e e f 5 5 f f . . 
+        . . . . f f f f f f f f f f . . 
+        . . . . . f f . . . f f f . . . 
+        `,img`
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e 4 d d d d f . . . 
+        . . . . f f e e 4 4 4 e f . . . 
+        . . . . . 4 d d e 2 2 2 f . . . 
+        . . . . . e d d e 2 2 2 f . . . 
+        . . . . . f e e f 4 5 5 f . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f f f . . . . 
+        . . . . f f e e e e f 2 f . . . 
+        . . . f f e e e e f 2 2 2 f . . 
+        . . . f e e e f f e e e e f . . 
+        . . . f f f f e e 2 2 2 2 e f . 
+        . . . f e 2 2 2 f f f f e 2 f . 
+        . . f f f f f f f e e e f f f . 
+        . . f f e 4 4 e b f 4 4 e e f . 
+        . . f e e 4 d 4 1 f d d e f . . 
+        . . . f e e e 4 d d d d f . . . 
+        . . . . 4 d d e 4 4 4 e f . . . 
+        . . . . e d d e 2 2 2 2 f . . . 
+        . . . . f e e f 4 4 5 5 f f . . 
+        . . . . f f f f f f f f f f . . 
+        . . . . . f f . . . f f f . . . 
+        `],
+    500,
+    false
+    )
+})
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    animation.runImageAnimation(
+    Player1,
+    [img`
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f f e 2 2 2 2 2 2 e e f . . 
+        . . f e 2 f f f f f f 2 e f . . 
+        . . f f f f e e e e f f f f . . 
+        . f f e f b f 4 4 f b f e f f . 
+        . f e e 4 1 f d d f 1 4 e e f . 
+        . . f f f f d d d d d e e f . . 
+        . f d d d d f 4 4 4 e e f . . . 
+        . f b b b b f 2 2 2 2 f 4 e . . 
+        . f b b b b f 2 2 2 2 f d 4 . . 
+        . . f c c f 4 5 5 4 4 f 4 4 . . 
+        . . . f f f f f f f f . . . . . 
+        . . . . . f f . . f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f f e 2 2 2 2 2 2 e e f . . 
+        . f f e 2 f f f f f f 2 e f f . 
+        . f f f f f e e e e f f f f f . 
+        . . f e f b f 4 4 f b f e f . . 
+        . f f e 4 1 f d d f 1 4 e f . . 
+        f d f f e 4 d d d d 4 e f e . . 
+        f b f e f 2 2 2 2 e d d 4 e . . 
+        f b f 4 f 2 2 2 2 e d d e . . . 
+        f c f . f 4 4 5 5 f e e . . . . 
+        . f f . f f f f f f f . . . . . 
+        . . . . f f f . . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f e e 2 2 2 2 2 2 e f f . . 
+        . f f e 2 f f f f f f 2 e f f . 
+        . f f f f f e e e e f f f f f . 
+        . . f e f b f 4 4 f b f e f . . 
+        . . f e 4 1 f d d f 1 4 e f . . 
+        . . e f f f f d d d 4 e f . . . 
+        . . f d d d d f 2 2 2 f e f . . 
+        . . f b b b b f 2 2 2 f 4 e . . 
+        . . f b b b b f 5 4 4 f . . . . 
+        . . . f c c f f f f f f . . . . 
+        . . . . f f . . . f f f . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . f f f 2 2 f f f . . . . 
+        . . . f f f 2 2 2 2 f f f . . . 
+        . . f f f e e e e e e f f f . . 
+        . . f e e 2 2 2 2 2 2 e f f . . 
+        . f f e 2 f f f f f f 2 e f f . 
+        . f f f f f e e e e f f f f f . 
+        . . f e f b f 4 4 f b f e f . . 
+        . . f e 4 1 f d d f 1 4 e f f . 
+        . . e f e 4 d d d d 4 e f f d f 
+        . . e 4 d d e 2 2 2 2 f e f b f 
+        . . . e d d e 2 2 2 2 f 4 f b f 
+        . . . . e e f 5 5 4 4 f . f c f 
+        . . . . . f f f f f f f . f f . 
+        . . . . . . . . . f f f . . . . 
+        `],
+    500,
+    false
+    )
+})
+info.onScore(3, function () {
+    game.gameOver(true)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    sprites.destroy(otherSprite)
+    animation.runImageAnimation(
+    sprite,
     [img`
         ........................
         .....ffff...............
@@ -106,20 +417,30 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         ........................
         `],
     300,
-    false
+    true
     )
-    if (Player1.overlapsWith(Food1)) {
-        sprites.destroy(Food1)
-    }
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-	
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    pause(1000)
     info.changeScoreBy(1)
 })
-let Food1: Sprite = null
 let Player1: Sprite = null
+let Enemy1 = sprites.create(img`
+    . . f f f . . . . . . . . f f f 
+    . f f c c . . . . . . f c b b c 
+    f f c c . . . . . . f c b b c . 
+    f c f c . . . . . . f b c c c . 
+    f f f c c . c c . f c b b c c . 
+    f f c 3 c c 3 c c f b c b b c . 
+    f f b 3 b c 3 b c f b c c b c . 
+    . c b b b b b b c b b c c c . . 
+    . c 1 b b b 1 b b c c c c . . . 
+    c b b b b b b b b b c c . . . . 
+    c b c b b b c b b b b f . . . . 
+    f b 1 f f f 1 b b b b f c . . . 
+    f b b b b b b b b b b f c c . . 
+    . f b b b b b b b b c f . . . . 
+    . . f b b b b b b c f . . . . . 
+    . . . f f f f f f f . . . . . . 
+    `, SpriteKind.Enemy)
 Player1 = sprites.create(img`
     ......ffff..............
     ....fff22fff............
@@ -146,28 +467,47 @@ Player1 = sprites.create(img`
     ........................
     ........................
     `, SpriteKind.Player)
-let Enemy1 = sprites.create(img`
-    . . f f f . . . . . . . . f f f 
-    . f f c c . . . . . . f c b b c 
-    f f c c . . . . . . f c b b c . 
-    f c f c . . . . . . f b c c c . 
-    f f f c c . c c . f c b b c c . 
-    f f c 3 c c 3 c c f b c b b c . 
-    f f b 3 b c 3 b c f b c c b c . 
-    . c b b b b b b c b b c c c . . 
-    . c 1 b b b 1 b b c c c c . . . 
-    c b b b b b b b b b c c . . . . 
-    c b c b b b c b b b b f . . . . 
-    f b 1 f f f 1 b b b b f c . . . 
-    f b b b b b b b b b b f c c . . 
-    . f b b b b b b b b c f . . . . 
-    . . f b b b b b b c f . . . . . 
-    . . . f f f f f f f . . . . . . 
-    `, SpriteKind.Enemy)
+Enemy1.setPosition(64, 87)
+Player1.setPosition(randint(10, 220), randint(150, 220))
 Player1.setStayInScreen(true)
 controller.moveSprite(Player1)
-Enemy1.setPosition(64, 87)
-Food1 = sprites.create(img`
+let Food1 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . 6 6 6 5 5 6 6 6 . . . . 
+    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
+    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
+    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
+    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
+    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
+    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
+    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
+    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+    . . . . 6 6 8 8 8 8 6 6 . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Food)
+let Food2 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . 6 6 6 5 5 6 6 6 . . . . 
+    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
+    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
+    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
+    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
+    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
+    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
+    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
+    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+    . . . . 6 6 8 8 8 8 6 6 . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    `, SpriteKind.Food)
+let Food3 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . 6 6 6 6 . . . . . . 
     . . . . 6 6 6 5 5 6 6 6 . . . . 
@@ -186,198 +526,90 @@ Food1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Food)
 Food1.scale = 0.85
+Food2.scale = 0.85
+Food3.scale = 0.85
 Enemy1.scale = 0.85
 tiles.setCurrentTilemap(tilemap`level2`)
 scene.cameraFollowSprite(Player1)
 scene.setBackgroundColor(15)
-Player1.setFlag(SpriteFlag.Ghost, true)
-for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
-    animation.runImageAnimation(
-    Enemy1,
-    [img`
-        f f f . . . . . . . . f f f . . 
-        c b b c f . . . . . . c c f f . 
-        . c b b c f . . . . . . c c f f 
-        . c c c b f . . . . . . c f c f 
-        . c c b b c f . c c . c c f f f 
-        . c b b c b f c c 3 c c 3 c f f 
-        . c b c c b f c b 3 c b 3 b f f 
-        . . c c c b b c b 1 b b b 1 c . 
-        . . . c c c c b b 1 b b b 1 c . 
-        . . . . c c b b b b b b b b b c 
-        . . . . f b b b b c 1 f f 1 b c 
-        . . . c f b b b b f 1 f f 1 f f 
-        . . c c f b b b b f 2 2 2 2 f f 
-        . . . . f c b b b b 2 2 2 2 f . 
-        . . . . . f c b b b b b b f . . 
-        . . . . . . f f f f f f f . . . 
-        `,img`
-        . . . . . . . . . . . f f f . . 
-        f f f . . . . . . . . c c f f f 
-        c b b c f . . . c c . c c c f f 
-        . c b b b f f c c 3 c c 3 c f f 
-        . c c c b b f c b 3 c b 3 c f f 
-        . c c b c b f c b b b b b b c f 
-        . c b b c b b c b 1 b b b 1 c c 
-        . c b c c c b b b b b b b b b c 
-        . . c c c c c b b c 1 f f 1 b c 
-        . . . c f b b b b f 1 f f 1 f c 
-        . . . c f b b b b f f f f f f f 
-        . . c c f b b b b f 2 2 2 2 f f 
-        . . . . f c b b b 2 2 2 2 2 f . 
-        . . . . . f c b b b 2 2 2 f . . 
-        . . . . . . f f f f f f f . . . 
-        . . . . . . . . . . . . . . . . 
-        `,img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . c c . c c . . . 
-        . . . . . . c c c 3 c c 3 f . . 
-        . . . . . c c c b 3 c b 3 c f . 
-        . . . . f f b b b b b b b b c f 
-        . . . . f f b b b 1 b b b 1 c c 
-        . . . f f f c b b b b b b b b c 
-        . . . f f f f b b c 1 f f 1 b c 
-        . . . b b b c c b f 1 f f 1 f f 
-        . . . c c c c f b f f f f f f f 
-        . . c c c b b f b f 2 2 2 2 f f 
-        . . . c b b c c b 2 2 2 2 2 f . 
-        . . c b b c c f f b 2 2 2 f . . 
-        . c c c c c f f f f f f f . . . 
-        c c c c . . . . . . . . . . . . 
-        `,img`
-        . f f f . . . . . . . . f f f . 
-        . c b b c f . . . . . . . c f f 
-        . . c b b c f . . . . . . c c f 
-        . . c c c b f . . . . . . . f c 
-        . . c c b b f f . . . . . f f c 
-        . . c b b c b f c c . c c f f f 
-        . . c b c c b f c c c c c f f f 
-        . . . c c c b c b 3 c c 3 c f . 
-        . . . c c c c b b 3 c b 3 b c . 
-        . . . . c c b b b b b b b b c c 
-        . . . c f b b b 1 1 b b b 1 1 c 
-        . . c c f b b b b b b b b b b f 
-        . . . . f b b b b c b b b c b f 
-        . . . . f c b b b 1 f f f 1 f . 
-        . . . . . f c b b b b b b f . . 
-        . . . . . . f f f f f f f . . . 
-        `],
-    300,
-    true
-    )
-    tiles.placeOnTile(Player1, value)
-}
-for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
-    animation.runImageAnimation(
-    Food1,
-    [img`
-        ........................
-        ........................
-        ........................
-        ........................
-        ..........ffff..........
-        ........ff1111ff........
-        .......fb111111bf.......
-        .......f11111111f.......
-        ......fd11111111df......
-        ......fd11111111df......
-        ......fddd1111dddf......
-        ......fbdbfddfbdbf......
-        ......fcdcf11fcdcf......
-        .......fb111111bf.......
-        ......fffcdb1bdffff.....
-        ....fc111cbfbfc111cf....
-        ....f1b1b1ffff1b1b1f....
-        ....fbfbffffffbfbfbf....
-        .........ffffff.........
-        ...........fff..........
-        ........................
-        ........................
-        ........................
-        ........................
-        `,img`
-        ........................
-        ........................
-        ........................
-        ........................
-        ..........ffff..........
-        ........ff1111ff........
-        .......fb111111bf.......
-        .......f11111111f.......
-        ......fd11111111df......
-        ......fd11111111df......
-        ......fddd1111dddf......
-        ......fbdbfddfbdbf......
-        ......fcdcf11fcdcf......
-        .......fb111111ffff.....
-        ......fffcdb1bc111cf....
-        ....fc111cbfbf1b1b1f....
-        ....f1b1b1ffffbfbfbf....
-        ....fbfbfffffff.........
-        .........fffff..........
-        ..........fff...........
-        ........................
-        ........................
-        ........................
-        ........................
-        `,img`
-        ........................
-        ........................
-        ........................
-        ........................
-        ..........ffff..........
-        ........ff1111ff........
-        .......fb111111bf.......
-        .......f11111111f.......
-        ......fd11111111df......
-        ......fd11111111df......
-        ......fddd1111dddf......
-        ......fbdbfddfbdbf......
-        ......fcdcf11fcdcf......
-        .......fb111111bf.......
-        ......fffcdb1bdffff.....
-        ....fc111cbfbfc111cf....
-        ....f1b1b1ffff1b1b1f....
-        ....fbfbffffffbfbfbf....
-        .........ffffff.........
-        ...........fff..........
-        ........................
-        ........................
-        ........................
-        ........................
-        `,img`
-        ........................
-        ........................
-        ........................
-        ........................
-        ..........ffff..........
-        ........ff1111ff........
-        .......fb111111bf.......
-        .......f11111111f.......
-        ......fd11111111df......
-        ......fd11111111df......
-        ......fddd1111dddf......
-        ......fbdbfddfbdbf......
-        ......fcdcf11fcdcf......
-        .....ffff111111bf.......
-        ....fc111cdb1bdfff......
-        ....f1b1bcbfbfc111cf....
-        ....fbfbfbffff1b1b1f....
-        .........fffffffbfbf....
-        ..........fffff.........
-        ...........fff..........
-        ........................
-        ........................
-        ........................
-        ........................
-        `],
-    100,
-    true
-    )
-}
-tiles.placeOnTile(Player1, tiles.getTileLocation(1, 1))
-Food1.setPosition(210, 40)
+Food1.setPosition(207, 40)
+Food2.setPosition(64, 136)
+Food2.setPosition(136, 113)
 Enemy1.follow(Player1)
-Enemy1.setVelocity(7, 7)
 info.setScore(0)
+animation.runImageAnimation(
+Enemy1,
+[img`
+    f f f . . . . . . . . f f f . . 
+    c b b c f . . . . . . c c f f . 
+    . c b b c f . . . . . . c c f f 
+    . c c c b f . . . . . . c f c f 
+    . c c b b c f . c c . c c f f f 
+    . c b b c b f c c 3 c c 3 c f f 
+    . c b c c b f c b 3 c b 3 b f f 
+    . . c c c b b c b 1 b b b 1 c . 
+    . . . c c c c b b 1 b b b 1 c . 
+    . . . . c c b b b b b b b b b c 
+    . . . . f b b b b c 1 f f 1 b c 
+    . . . c f b b b b f 1 f f 1 f f 
+    . . c c f b b b b f 2 2 2 2 f f 
+    . . . . f c b b b b 2 2 2 2 f . 
+    . . . . . f c b b b b b b f . . 
+    . . . . . . f f f f f f f . . . 
+    `,img`
+    . . . . . . . . . . . f f f . . 
+    f f f . . . . . . . . c c f f f 
+    c b b c f . . . c c . c c c f f 
+    . c b b b f f c c 3 c c 3 c f f 
+    . c c c b b f c b 3 c b 3 c f f 
+    . c c b c b f c b b b b b b c f 
+    . c b b c b b c b 1 b b b 1 c c 
+    . c b c c c b b b b b b b b b c 
+    . . c c c c c b b c 1 f f 1 b c 
+    . . . c f b b b b f 1 f f 1 f c 
+    . . . c f b b b b f f f f f f f 
+    . . c c f b b b b f 2 2 2 2 f f 
+    . . . . f c b b b 2 2 2 2 2 f . 
+    . . . . . f c b b b 2 2 2 f . . 
+    . . . . . . f f f f f f f . . . 
+    . . . . . . . . . . . . . . . . 
+    `,img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . . . . . . . . . 
+    . . . . . . . . c c . c c . . . 
+    . . . . . . c c c 3 c c 3 f . . 
+    . . . . . c c c b 3 c b 3 c f . 
+    . . . . f f b b b b b b b b c f 
+    . . . . f f b b b 1 b b b 1 c c 
+    . . . f f f c b b b b b b b b c 
+    . . . f f f f b b c 1 f f 1 b c 
+    . . . b b b c c b f 1 f f 1 f f 
+    . . . c c c c f b f f f f f f f 
+    . . c c c b b f b f 2 2 2 2 f f 
+    . . . c b b c c b 2 2 2 2 2 f . 
+    . . c b b c c f f b 2 2 2 f . . 
+    . c c c c c f f f f f f f . . . 
+    c c c c . . . . . . . . . . . . 
+    `,img`
+    . f f f . . . . . . . . f f f . 
+    . c b b c f . . . . . . . c f f 
+    . . c b b c f . . . . . . c c f 
+    . . c c c b f . . . . . . . f c 
+    . . c c b b f f . . . . . f f c 
+    . . c b b c b f c c . c c f f f 
+    . . c b c c b f c c c c c f f f 
+    . . . c c c b c b 3 c c 3 c f . 
+    . . . c c c c b b 3 c b 3 b c . 
+    . . . . c c b b b b b b b b c c 
+    . . . c f b b b 1 1 b b b 1 1 c 
+    . . c c f b b b b b b b b b b f 
+    . . . . f b b b b c b b b c b f 
+    . . . . f c b b b 1 f f f 1 f . 
+    . . . . . f c b b b b b b f . . 
+    . . . . . . f f f f f f f . . . 
+    `],
+300,
+true
+)
+Enemy1.vx = 7
+Enemy1.vy = 7

@@ -108,18 +108,17 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     300,
     false
     )
-    if (Player1.overlapsWith(Enemy2)) {
-        sprites.destroy(Enemy2)
+    if (Player1.overlapsWith(Food1)) {
+        sprites.destroy(Food1)
     }
-})
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
-    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
-    sprites.destroy(Player1)
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })
-let Enemy2: Sprite = null
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
+let Food1: Sprite = null
 let Player1: Sprite = null
 Player1 = sprites.create(img`
     ......ffff..............
@@ -168,33 +167,25 @@ let Enemy1 = sprites.create(img`
 Player1.setStayInScreen(true)
 controller.moveSprite(Player1)
 Enemy1.setPosition(64, 87)
-Enemy2 = sprites.create(img`
-    ........................
-    ........................
-    ........................
-    ........................
-    ..........ffff..........
-    ........ff1111ff........
-    .......fb111111bf.......
-    .......f11111111f.......
-    ......fd11111111df......
-    ......fd11111111df......
-    ......fddd1111dddf......
-    ......fbdbfddfbdbf......
-    ......fcdcf11fcdcf......
-    .......fb111111bf.......
-    ......fffcdb1bdffff.....
-    ....fc111cbfbfc111cf....
-    ....f1b1b1ffff1b1b1f....
-    ....fbfbffffffbfbfbf....
-    .........ffffff.........
-    ...........fff..........
-    ........................
-    ........................
-    ........................
-    ........................
+Food1 = sprites.create(img`
+    . . . . . . . . . . . . . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . 6 6 6 5 5 6 6 6 . . . . 
+    . . . 7 7 7 7 6 6 6 6 6 6 . . . 
+    . . 6 7 7 7 7 8 8 8 1 1 6 6 . . 
+    . . 7 7 7 7 7 8 8 8 1 1 5 6 . . 
+    . 6 7 7 7 7 8 8 8 8 8 5 5 6 6 . 
+    . 6 7 7 7 8 8 8 6 6 6 6 5 6 6 . 
+    . 6 6 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . 6 8 7 7 8 8 6 6 6 6 6 6 6 6 . 
+    . . 6 8 7 7 8 6 6 6 6 6 8 6 . . 
+    . . 6 8 8 7 8 8 6 6 6 8 6 6 . . 
+    . . . 6 8 8 8 8 8 8 8 8 6 . . . 
+    . . . . 6 6 8 8 8 8 6 6 . . . . 
+    . . . . . . 6 6 6 6 . . . . . . 
+    . . . . . . . . . . . . . . . . 
     `, SpriteKind.Food)
-Enemy2.scale = 0.85
+Food1.scale = 0.85
 Enemy1.scale = 0.85
 tiles.setCurrentTilemap(tilemap`level2`)
 scene.cameraFollowSprite(Player1)
@@ -279,7 +270,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
 }
 for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
     animation.runImageAnimation(
-    Enemy2,
+    Food1,
     [img`
         ........................
         ........................
@@ -386,6 +377,7 @@ for (let value of tiles.getTilesByType(sprites.castle.tilePath5)) {
     )
 }
 tiles.placeOnTile(Player1, tiles.getTileLocation(1, 1))
-Enemy2.setPosition(210, 40)
+Food1.setPosition(210, 40)
 Enemy1.follow(Player1)
 Enemy1.setVelocity(7, 7)
+info.setScore(0)

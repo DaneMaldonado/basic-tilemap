@@ -112,6 +112,10 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         sprites.destroy(Enemy2)
     }
 })
+sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Player, function (sprite, otherSprite) {
+    sprites.destroyAllSpritesOfKind(SpriteKind.Player)
+    sprites.destroy(Player1)
+})
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 	
 })

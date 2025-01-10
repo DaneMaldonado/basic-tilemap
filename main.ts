@@ -1,3 +1,32 @@
+function SpawnPortal () {
+    for (let value of tiles.getTilesByType(assets.tile`myTile1`)) {
+        Portal = sprites.create(img`
+            . . . . . . . c d . . . . . . . 
+            . . . . . . . c d . . . . . . . 
+            . . . . . . . c d . . . . . . . 
+            . . . . . . . c b . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . c 6 . . . . . . . 
+            . . . . . . . f f . . . . . . . 
+            . . . . . . . 8 6 . . . . . . . 
+            . . . . . . 8 8 9 8 . . . . . . 
+            . . . . . . 8 6 9 8 . . . . . . 
+            . . . . . c c c 8 8 8 . . . . . 
+            . . . . 8 8 6 6 6 9 8 8 . . . . 
+            . . 8 f f f c c e e f f 8 8 . . 
+            . 8 8 8 8 8 8 6 6 6 6 9 6 8 8 . 
+            8 8 8 8 8 8 8 8 6 6 6 9 6 6 8 8 
+            8 8 8 8 8 8 8 8 6 6 6 6 9 6 8 8 
+            `, SpriteKind.Projectile)
+        Portal.scale = 0.85
+        tiles.setTileAt(value, sprites.castle.tilePath5)
+        tiles.placeOnTile(Portal, value)
+    }
+}
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile1`, function (sprite, location) {
+    currentlevel += 1
+    Loadlevel()
+})
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     animation.runImageAnimation(
     Player1,
@@ -556,6 +585,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 let Food1: Sprite = null
 let Enemy1: Sprite = null
+let Portal: Sprite = null
 let Player1: Sprite = null
 let currentlevel = 0
 currentlevel = 0
@@ -594,3 +624,4 @@ scene.setBackgroundColor(15)
 info.setScore(0)
 SpawnFood()
 SpawnEnemy()
+SpawnPortal()

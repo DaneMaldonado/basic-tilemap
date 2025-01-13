@@ -8,6 +8,12 @@ namespace myTiles {
     export const tile2 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const tile3 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile4 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile5 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    export const tile6 = image.ofBuffer(hex``);
 
     helpers._registerFactory("tilemap", function(name: string) {
         switch(helpers.stringTrim(name)) {
@@ -532,7 +538,7 @@ namespace myTiles {
 . . 2 . . 2 . . 2 . . 2 . . 
 . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . 
-`, [myTiles.transparency16,sprites.castle.tilePath1,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.builtin.forestTiles0,sprites.castle.tilePath8,sprites.castle.tilePath6,myTiles.tile1,sprites.castle.tilePath7,sprites.castle.tilePath9,sprites.castle.tilePath3,myTiles.tile2,myTiles.tile3], TileScale.Sixteen);
+`, [myTiles.transparency16,sprites.castle.tilePath1,sprites.castle.tilePath5,sprites.castle.tilePath4,sprites.castle.tilePath2,sprites.builtin.forestTiles0,sprites.castle.tilePath8,sprites.castle.tilePath6,myTiles.tile1,sprites.castle.tilePath7,sprites.castle.tilePath9,sprites.castle.tilePath3,myTiles.tile2,myTiles.tile6], TileScale.Sixteen);
         }
         return null;
     })
@@ -546,6 +552,12 @@ namespace myTiles {
             case "tile2":return tile2;
             case "myTile1":
             case "tile3":return tile3;
+            case "myTile2":
+            case "tile4":return tile4;
+            case "myTile3":
+            case "tile5":return tile5;
+            case "myTile4":
+            case "tile6":return tile6;
         }
         return null;
     })
